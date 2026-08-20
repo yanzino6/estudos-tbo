@@ -1,0 +1,25 @@
+Desenvolvendo um algorítmo na prática
+
+Modelar um problema e encontrar o algoritmo pra resolver - utilizando uma API/TAD
+Métricas de avaliação de um algorítmo: tempo e memória
+É bom o suficiente? Se não, descobrir por quê.
+Encontre uma forma de diminuir esses recursos e iterar até satisfeito.
+
+Estudo de algorítmos
+
+Método científico
+Análise matemática
+Análise Empírica
+
+Quick find e Quick union
+
+    Quick Find
+
+    Conectar e verificar conexão entre objetos
+    Utilizer um vetor de tamanho N, onde cada posicao guarda o índice da componente conexa que o valor i está
+    Conexão = igualara índices
+    Há conexão = ver se índices são iguais
+
+    Quick Union
+
+    
