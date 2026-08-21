@@ -39,7 +39,7 @@ void marcaMultiplos(crivo *c)
 
 void mostraPrimos(crivo *c)
 {
-    for (int i = 0; i < c->tamcrivo; i++)
+    for (int i = 2; i < c->tamcrivo; i++)
     {
         if (c->arr[i]==true)
         {
