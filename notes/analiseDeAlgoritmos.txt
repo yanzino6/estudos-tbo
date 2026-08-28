@@ -1,0 +1,19 @@
+Análise de algorítmos:
+    Predição de desempenho
+    Comparação de algoritmos
+    Garantir comportamentos em programas
+
+O meu programa será capaz de lidar com uma entrada real grande? (você deve ser capaz de responder)
+
+Medições:
+    Crescimento: comparar Crescimento de entradas e crescimento de tempo
+
+Fatores independentes do sistema:
+    Determinam os expoentes da função de regressão
+
+Fatores dependentes do sistema:
+    Determinam os fatores da função de regressão
+
+Tempo de execução: custo x frequência para todas as ops
+    Determinar o conjunto de operações (depende do algoritmo e dados de entrada)
+    Determinar o custo de cada operação (depende da máquina, compilador)

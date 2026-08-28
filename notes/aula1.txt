@@ -22,4 +22,4 @@ Quick find e Quick union
 
     Quick Union
 
-    
+    Usar árvores e ligar uma na ponta da outra toda vez que houver uma operação de Union
