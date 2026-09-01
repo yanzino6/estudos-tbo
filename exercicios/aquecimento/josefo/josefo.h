@@ -4,16 +4,16 @@
 #include <stdio.h>
 
 typedef struct josefo josefo;
+typedef struct node node;
 
 
-
-josefo *criaJosefo(int tam);
+josefo *criaJosefo();
 
 void buscaPessoaJosefo(int i, josefo *j);
 
-void executaJosefo();
+void executaJosefo(int n, int m);
 
-void removePessoaJosefo(int i, josefo *j);
+node *removePessoaJosefo(int i, josefo *j);
 
 void insereNoJosefo(int v, josefo *j);
 
