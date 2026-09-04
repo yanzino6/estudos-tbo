@@ -1,5 +1,6 @@
 #include "pilha.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 typedef struct node{
     struct node *prox;
@@ -29,26 +30,54 @@ void inserePilha(void *data, pilha *p)
         p->top=new;
         return;
     }
+    else
+    {
+        new->prox=p->top;
+        p->top=new;
+    }
     
-    new->prox=p->top;
-    p->top=new;
 }
 
 void *removeTopo(pilha *p)
 {      
-    void *rmdata= p->top->data;
-    if (p->top->prox==NULL)
+    if (p->top!=NULL)
     {
         node *rm =p->top;
-        free (rm);
-        p->top=NULL;
-    }
-    else 
-    {
+        void *rmdata= p->top->data;
 
-    }
-    return rmdata;
-    
+        if (p->top->prox==NULL)
+        {
+            p->top=NULL;
+            free(rm);
+        }
+        else 
+        {
+            p->top=rm->prox;
+            free (rm);
+        }
+        return rmdata;
+        }
+        return NULL;
 }
 
-void liberaPilha(pilha *p);
+void liberaPilha(pilha *p)
+{
+    printf("%d", *(int*)p->top->data);
+}
+
+int calculadora(char op, int n1, int n2)
+{
+    switch (op)
+    {
+        case '+':
+            return n1 + n2;
+        case '-':
+            return n1 - n2;
+        case '*':
+            return n1 * n2;
+        case '/':
+            return n1 / n2;
+        default:
+            return 0;
+    }
+}

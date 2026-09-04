@@ -11,4 +11,6 @@ void *removeTopo(pilha *p);
 
 void liberaPilha(pilha *p);
 
+int calculadora(char op, int n1, int n2);
+
 #endif
