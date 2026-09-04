@@ -13,4 +13,6 @@ void liberaPilha(pilha *p);
 
 int calculadora(char op, int n1, int n2);
 
+void imprimePilha (pilha *p);
+
 #endif

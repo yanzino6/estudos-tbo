@@ -46,7 +46,9 @@ int main ()
         
     }
     free(pChar);
-    printf("%d\n", *(int*)removeTopo(pInt));
+    int *res=(int*)removeTopo(pInt);
+    printf("%d\n", *res);
+    free(res);
     free(pInt);
     return 0;
 }

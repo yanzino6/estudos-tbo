@@ -81,3 +81,21 @@ int calculadora(char op, int n1, int n2)
             return 0;
     }
 }
+
+void imprimePilha (pilha *p)
+{
+    if (p->top==NULL)
+    {
+        printf("PILHA VAZIA\n");
+        return;
+    }
+    
+    node *n=p->top;
+    
+    while (n!=NULL)
+    {
+        printf("Item");
+        n=n->prox;
+    }
+    
+}
