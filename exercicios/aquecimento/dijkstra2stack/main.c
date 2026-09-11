@@ -19,14 +19,14 @@ int main ()
         }
         if (c>47&&c<58)
         {   
-            int *val = malloc(sizeof(int));
+            int *val = (int *)malloc(sizeof(int));
             *val = c - '0';
             inserePilha(val, pInt);
             
         }
         else if (c!='('&&c!=')')
         {
-            char *val = malloc(sizeof(char));
+            char *val = (char *)malloc(sizeof(char));
             *val=c;
             inserePilha(val,pChar);
         }
@@ -35,7 +35,7 @@ int main ()
             int *v1=(int*)removeTopo(pInt);
             int *v2=(int*)removeTopo(pInt);
             char *op=(char*)removeTopo(pChar);
-            int *res = malloc(sizeof(int));
+            int *res = (int *)malloc(sizeof(int));
             *res = calculadora(*op,*v2,*v1);
             inserePilha(res,pInt);
             free(v1);
