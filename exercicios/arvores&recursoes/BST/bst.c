@@ -62,3 +62,27 @@ void imprimeBst(bst *b, int space)
 {   
 
 }
+
+int alturaBst(bst *b)
+{
+
+    if (b==NULL)
+    {
+        return -1;
+    }
+    
+
+    int hEsq = alturaBst(b->esq)+1;
+    int hDir = alturaBst(b->dir)+1;
+
+    if (hEsq>hDir)
+    {
+        return hEsq;
+    }
+    else
+    {
+        return hDir;
+    }
+    
+
+}

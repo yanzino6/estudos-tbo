@@ -11,4 +11,6 @@ void destroiBst(bst *b);
 
 void imprimeBst(bst *b, int space);
 
+int alturaBst(bst *b);
+
 #endif

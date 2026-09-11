@@ -1,17 +1,22 @@
 #include "bst.h"
 #include <stdio.h>
 #include <stdlib.h>
-
-int main ()
+#include <time.h>
+int main (int argc, char *argv[])
 {
+    srand(time(NULL)); // should only be called once
+    int r;
+
+    int n = atoi(argv[1]);
     bst *b = criaBST();
-    b=insereNaBST(b,15);
-    b=insereNaBST(b,15);
-    b=insereNaBST(b,2);
-    b=insereNaBST(b,11);
-    b=insereNaBST(b,2);
-    b=insereNaBST(b,4);
-    b=insereNaBST(b,42);
+    for (int i = 0; i < n; i++)
+    {
+        r = rand();
+        b=insereNaBST(b,r);
+    }
+
+    printf("Altura da bst = %d\n", alturaBst(b));
+
     destroiBst(b);
     return 0;
 }
