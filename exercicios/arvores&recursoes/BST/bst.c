@@ -148,9 +148,42 @@ void nonrec_preorder(bst *t, void (*visit)(bst*))
 void nonrec_inorder(bst *t, void (*visit)(bst*))
 {
     pilha *p=criaPilha();
-    bst *raiz = t;
-    bst *aux = t;
+    bst *aux = t->esq;
+    push(p,t);
+
+    while (aux != NULL || pilhavazia(p) == 0)
+    {
+        while (aux!=NULL)
+        {
+            push(p,aux);
+            aux=aux->esq;
+        }
+        aux=pop(p);
+        visit(aux);
+        aux=aux->dir;
+    }
+    destroyStack(p);
     
+}
+
+void nonrec_postorder(bst *t, void (*visit)(bst*))
+{
+    pilha *p=criaPilha();
+    bst *aux = t->esq;
+    push(p,t);
+
+    while (aux != NULL || pilhavazia(p) == 0)
+    {
+        while (aux!=NULL)
+        {
+            push(p,aux);
+            aux=aux->esq;
+        }
+        aux=pop(p);
+        visit(aux);
+        aux=aux->dir;
+    }
+    destroyStack(p);
 }
 
 void printValue(bst * b)

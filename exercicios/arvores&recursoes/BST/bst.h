@@ -23,6 +23,8 @@ void nonrec_preorder(bst *t, void (*visit)(bst*));
 
 void nonrec_inorder(bst *t, void (*visit)(bst*));
 
+void nonrec_postorder(bst *t, void (*visit)(bst*));
+
 void printValue(bst * b);
 
 #endif

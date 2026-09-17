@@ -17,7 +17,7 @@ int main (int argc, char *argv[])
 
     printf("Altura da bst = %d\n", alturaBst(b));
 
-    nonrec_preorder(b,printValue);
+    nonrec_postorder(b,printValue);
 
     destroiBst(b);
     return 0;
