@@ -1,7 +1,7 @@
 #include "bst.h"
 #include <stdlib.h>
 #include <stdio.h>
-
+#include "pilha.h"
 struct bst 
 {
     bst *esq;
@@ -85,4 +85,79 @@ int alturaBst(bst *b)
     }
     
 
+}
+
+void rec_preorder(bst *t, void (*visit)(bst*))
+{
+    if (t==NULL)
+    {
+        return;
+    }
+    visit(t);
+    rec_preorder(t->esq,visit);
+    rec_preorder(t->dir,visit);
+}
+
+void rec_inorder(bst *t, void (*visit)(bst*))
+{
+    if (t==NULL)
+    {
+        return;
+    }
+    
+    rec_inorder(t->esq,visit);
+    visit(t);
+    rec_inorder(t->dir,visit);
+}
+
+void rec_postorder(bst *t, void (*visit)(bst*))
+{
+    if (t==NULL)
+    {
+        return;
+    }
+    
+    rec_postorder(t->esq,visit);
+    rec_postorder(t->dir,visit);
+    visit(t);
+}
+
+void nonrec_preorder(bst *t, void (*visit)(bst*))
+{   
+    pilha *p=criaPilha();
+    bst *aux = t;
+    push(p,aux);
+    while (pilhavazia(p)==0)
+    {
+        aux=pop(p);
+        visit(aux);
+        if (aux->dir!=NULL)
+        {
+            push(p,aux->dir);
+        }
+        
+        if (aux->esq!=NULL)
+        {
+            push(p,aux->esq);
+        }
+        
+    }
+    destroyStack(p);
+}
+
+void nonrec_inorder(bst *t, void (*visit)(bst*))
+{
+    pilha *p=criaPilha();
+    bst *raiz = t;
+    bst *aux = t;
+    
+}
+
+void printValue(bst * b)
+{
+    if (b!=NULL)
+    {
+        printf("%d ", b->v);
+    }
+    
 }

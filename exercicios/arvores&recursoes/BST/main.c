@@ -11,11 +11,13 @@ int main (int argc, char *argv[])
     bst *b = criaBST();
     for (int i = 0; i < n; i++)
     {
-        r = rand();
+        r = rand()%1001;
         b=insereNaBST(b,r);
     }
 
     printf("Altura da bst = %d\n", alturaBst(b));
+
+    nonrec_preorder(b,printValue);
 
     destroiBst(b);
     return 0;
