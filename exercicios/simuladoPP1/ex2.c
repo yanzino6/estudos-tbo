@@ -4,7 +4,7 @@
 void print_post_order(int *pre, int *in, int N) {
     if (N==1)
     {
-        printf("%d\n",in[0]);
+        printf("%d\n",pre[0]);
         return;
     }
 
@@ -14,9 +14,18 @@ void print_post_order(int *pre, int *in, int N) {
     {
         i++;
     }
-    print_post_order(&pre[1],in,i);
-    print_post_order(&pre[i+1],&in[i+1],N-i-1);
     
+    if (i!=0)
+    {
+        print_post_order(&pre[1],in,i);
+    }
+    
+    if (i!=N-1)
+    {
+        print_post_order(&pre[i+1],&in[i+1],N-i-1);
+    }
+    
+    printf("%d\n",pre[0]);
 }
 
 int main() {
