@@ -22,7 +22,7 @@ void UF_union(int p, int q)
     int proot = UF_find(p);
     int qroot = UF_find(q);
 
-    
+
 
     if (sz[proot]<sz[qroot])
     {
@@ -43,6 +43,7 @@ int UF_find(int p)
 
     while (p!=id[p])
     {
+        id[p]=id[id[p]];
         p=id[p];
     }
     return p;
