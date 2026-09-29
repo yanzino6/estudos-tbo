@@ -4,14 +4,17 @@
 
 int nonRecEuclides(int N, int M)
 {
-    int res=1;
+    int res=M;
     int quos;
+    int rec = 0;
     while (N%M!=0)
     {
         res = N%M;
         N=M;
         M=res;
+        rec++;
     }
+    printf("Recursao = %d\n", rec);
     return res;
 }
 
