@@ -1,6 +1,7 @@
 #include "item.h"
 #include <stdlib.h>
-
+#include <time.h>
+#include <stdio.h>
 int cutoff = 10;
 
 void merge(Item *a, Item *aux,int lo, int mid ,int hi)
@@ -69,6 +70,10 @@ void merge_sort (Item *a,Item *aux, int lo, int hi )
     int mid = lo + (hi-lo)/2;
     merge_sort(a,aux,lo, mid);
     merge_sort(a,aux, mid +1, hi);
+    if(!less(a[mid+1],a[mid]))
+    {
+        return;
+    }
     merge(a, aux, lo, mid, hi);
 }
 
@@ -76,7 +81,12 @@ void sort (Item *a, int lo, int hi )
 {
     int n =(hi-lo)+1;
     Item * aux = malloc(n*sizeof(Item));
-    merge_sort(a,aux,lo,hi);
+    clock_t init = clock();
+merge_sort(a, aux, lo, hi);
+clock_t end = clock();
+
+double tempo = (double)(end - init) / CLOCKS_PER_SEC;
+printf("Tempo de execucao: %f segundos\n", tempo);
     free(aux);
 
 }
