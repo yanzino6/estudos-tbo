@@ -61,7 +61,7 @@ void insertion_sort (Item *a, int lo, int hi )
 }
 void merge_sort (Item *a,Item *aux, int lo, int hi )
 {   
-    //oi
+
     if (hi<=lo+cutoff-1)
     {
         insertion_sort(a,lo,hi);
@@ -82,8 +82,8 @@ void sort (Item *a, int lo, int hi )
     int n =(hi-lo)+1;
     Item * aux = malloc(n*sizeof(Item));
     clock_t init = clock();
-merge_sort(a, aux, lo, hi);
-clock_t end = clock();
+    merge_sort(a, aux, lo, hi);
+    clock_t end = clock();
 
 double tempo = (double)(end - init) / CLOCKS_PER_SEC;
 printf("Tempo de execucao: %f segundos\n", tempo);
