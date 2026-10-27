@@ -52,7 +52,7 @@ void insertion_sort (Item *a, int lo, int hi )
     }
     exch(a[min],a[lo]);
     int j;
-    for (int i = lo+1; i <= hi; i++)
+    for (int i = lo+2; i <= hi; i++)
     {   int temp = a[i];
         for ( j = i; j >= lo && less(temp,a[j-1]); j--)
         {
