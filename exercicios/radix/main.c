@@ -3,7 +3,8 @@
 int main ()
 {
     FILE *f=fopen("in/abra.txt", "r");
-    char *t=readFile(f);
+    int tam;
+    char *t=readFile(f, &tam);
     printText(t);
     freeText(t);
     fclose(f);

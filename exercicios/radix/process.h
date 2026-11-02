@@ -2,7 +2,8 @@
 #define PROCESS_H_
 #include <stdio.h>
 
-char *readFile(FILE *r);
+// Retorna NULL em erro e zera size; o tamanho declarado e uma estimativa.
+char *readFile(FILE *r, int *size);
 
 void printText(char *t);
 
